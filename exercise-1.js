@@ -5,3 +5,37 @@
 // На этот раз оформите решение в виде функции: постарайтесь дать этой функции корректное название, вызовите функцию, проанализируйте синтаксис.
 
 // РЕШЕНИЕ:
+let arr = [8, 3, 2, 0, 1, 4, 9, 0, 8, 6, 5, 'g', 'p', 'e'];
+
+function countNumber(list) {
+    let even = 0;
+    let odd = 0;
+    let zero = 0;
+
+    for (let i = 0; i < list.length; i++) {
+
+        // проверяем на тип number
+        if (typeof list[i] !== 'number') {
+            continue;
+        }
+
+        // проверяем на количество нулей
+        if (list[i] === 0) {
+            zero++;
+            continue;
+        }
+
+        // проверяем на чётность
+        if (list[i] % 2 === 0) {
+            even++;
+        } else {
+            odd++;
+        }
+    }
+
+    console.log('Чётных чисел: ', even);
+    console.log('Нечётных чисел: ', odd);
+    console.log('Нулей: ', zero);
+}
+
+countNumber(arr);
